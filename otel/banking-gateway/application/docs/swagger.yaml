@@ -1,0 +1,20 @@
+info:
+  contact: {}
+paths:
+  /healthz:
+    get:
+      description: Healthiness of the jwk service
+      operationId: healthz
+      responses:
+        "200":
+          description: ""
+      summary: Healhiness probe
+  /readiness:
+    get:
+      description: Readiness of the jwk service
+      operationId: readiness
+      responses:
+        "200":
+          description: ""
+      summary: Readiness probe
+swagger: "2.0"

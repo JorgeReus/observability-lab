@@ -1,0 +1,32 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/healthz": {
+            "get": {
+                "description": "Healthiness of the jwk service",
+                "summary": "Healhiness probe",
+                "operationId": "healthz",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/readiness": {
+            "get": {
+                "description": "Readiness of the jwk service",
+                "summary": "Readiness probe",
+                "operationId": "readiness",
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    }
+}

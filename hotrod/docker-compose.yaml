@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger
+    ports:
+      # UDP Tracing Jaeger
+      - "6831:6831/udp"
+      # UI
+      - "16686:16686"
+      # HTTP Tracing instrad of UDP
+      - "14250"
+      # GRPC
+      - "14268:14268"
+
+  hotrod:
+    image: jaegertracing/example-hotrod:latest
+    container_name: hotrod
+    command: all
+    environment:
+      JAEGER_AGENT_HOST: jaeger
+      JAEGER_AGENT_PORT: 6831 
+    ports:
+      - "8080-8083:8080-8083"
+    depends_on:
+      - jaeger

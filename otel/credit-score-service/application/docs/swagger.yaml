@@ -1,0 +1,28 @@
+info:
+  contact: {}
+paths:
+  /healthz:
+    get:
+      description: Healthiness of the jwk service
+      operationId: healthz
+      responses:
+        "200":
+          description: ""
+      summary: Healhiness probe
+  /readiness:
+    get:
+      description: Readiness of the jwk service
+      operationId: readiness
+      responses:
+        "200":
+          description: ""
+      summary: Readiness probe
+  /score:
+    get:
+      description: Returns the score of a user
+      operationId: GetUserBankingScore
+      responses:
+        "200":
+          description: ""
+      summary: User Banking Score
+swagger: "2.0"
